@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +19,7 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  padding-bottom: 160px;
 }
 
 h1,
@@ -36,8 +40,6 @@ ul,
 ol {
   list-style: none;
 }
-
-/* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -48,4 +50,192 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+.content {
+  display: grid;
+  grid-template-columns: 1fr 399px;
+  gap: 30px;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: end;
+}
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+.content__list-container {
+  position: relative;
+  height: 298px;
+  width: 399px;
+  overflow-y: auto;
+}
+.result__video-container {
+  position: relative;
+  height: 386px;
+  width: 711px;
+}
+.result__video {
+  width: 100%;
+  object-fit: cover;
+}
+.content__list{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 3px;
+}
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+.content__video-card-description-container {
+  flex-grow: 1;
+  
+}
+.search-form__fieldset-title {
+  font-size: 18px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: normal;
+  padding-bottom: 3px;
+}
+.title {
+  font-family: "Oswald", sans-serif;
+  font-size: 75px;
+  font-style: bold;
+  text-transform: uppercase;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+.content__accent {
+  color: #545050;
+}
+.content__card-link {
+  display:block;
+  text-decoration: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.content__video-card-title {
+  overflow: hidden;
+  max-width: 196px;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-overflow: ellipsis;
+  font-family: "Oswald", sans-serif;
+}
+.content__video-card-description {
+  line-clamp: 1;
+  font-size: 18px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  text-overflow: ellipsis;
+  line-height: 16px;
+}
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.search-form__checkbox-list {
+  display: flex;
+  gap: 14px;
+  padding-top: 5px;
+}
+.search-form__fieldset {
+  border: 0px;
+}
+.search-form__textfield {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  background-color: #1B1919;
+  color: rgb(255 255 255 / 70%);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+  appearance: none;
+  min-width: 225px;
+}
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+.search-form__textfield:focus {
+  outline: none;
+}
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__pseudo-checkbox {
+  display: inline-flex;
+  border: 1px solid #fff;
+  width: 19px;
+  height: 19px;
+}
+.search-form__pseudo-checkbox::after {
+  content: "";
+  background-color: #fff;
+  display: block;
+  width: 90%;
+  height: 90%;
+  margin-left: 1px;
+  align-self: center;
+  justify-self: center;
+  opacity: 0;
+}
+.search-form__pseudo-checkbox:active::after {
+  opacity: 1;
+}
+.search-form__label:has(.search-form__label-text):hover {
+  text-decoration: underline;
+}
+.button {
+  border: 1px solid #fff;
+  background-color: #1B1919/0;
+  color: #fff;
+  cursor: pointer;
+}
+.search-form__submit-button {
+  align-self: end;
+  width: 194px;
+  height: 34px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  background-color: #1B1919;
+}
+.more-button {
+  width: 100%;
+  height: 34px;
+  background-color:#1B1919;
+  font-style: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+}
+.button:hover {
+  text-decoration: underline;
+}
+.button:active {
+  background-color: #545050;
+}
+.content__card-link_current {
+  background-color: #545050;
+}
+.content__card-link:active{
+  background-color: #545050;
+}
+.content__card-link:hover {
+  text-decoration: underline solid #fff;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
 }
