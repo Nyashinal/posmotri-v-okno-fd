@@ -62,8 +62,7 @@ ol {
 .search-form {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 20px;
+  gap: 0px;
 }
 .content__list-container {
   position: relative;
@@ -75,20 +74,24 @@ ol {
   position: relative;
   height: 386px;
   width: 711px;
+  margin-bottom: 18px;
 }
 .result__video {
   width: 100%;
   object-fit: cover;
+  height: 386px;
 }
 .content__list{
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-left: 3px;
 }
 .content__video-card {
   display: flex;
   align-items: flex-start;
+}
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 .content__video-card-thumbnail {
   width: 194px;
@@ -98,13 +101,12 @@ ol {
 }
 .content__video-card-description-container {
   flex-grow: 1;
-  
 }
 .search-form__fieldset-title {
   font-size: 18px;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: normal;
-  padding-bottom: 3px;
+  padding-bottom: 2px;
 }
 .title {
   font-family: "Oswald", sans-serif;
@@ -112,13 +114,13 @@ ol {
   font-style: bold;
   text-transform: uppercase;
   line-height: 70px;
-  margin-bottom: 20px;
+  margin-bottom: 19px;
 }
 .content__accent {
   color: #545050;
 }
 .content__card-link {
-  display:block;
+  display: block;
   text-decoration: none;
   color: #FFFFFF;
   cursor: pointer;
@@ -133,10 +135,13 @@ ol {
 }
 .content__video-card-description {
   line-clamp: 1;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 18px;
   font-family: "Fira Sans Condensed", sans-serif;
   text-overflow: ellipsis;
-  line-height: 16px;
 }
 .visually-hidden {
   position: absolute;
@@ -147,25 +152,31 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .search-form__checkbox-list {
   display: flex;
-  gap: 14px;
+  gap: 15px;
   padding-top: 5px;
+  width: fit-content;
 }
 .search-form__fieldset {
-  border: 0px;
+  border: none;
 }
 .search-form__textfield {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1B1919;
-  color: rgb(255 255 255 / 70%);
+  color: rgb(255 255 255);
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-left: none;
   border-right: none;
   appearance: none;
-  min-width: 225px;
+  min-width: 225px; 
 }
 .search-form__textfield::placeholder {
   color: rgb(255 255 255 / 0.7);
@@ -175,19 +186,22 @@ ol {
 }
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
+  border-radius: 0px;
   outline-offset: 1px;
 }
 
 .search-form__pseudo-checkbox {
-  display: inline-flex;
+  display: flex;
+  flex-shrink: 0;
   border: 1px solid #fff;
   width: 19px;
   height: 19px;
 }
+
 .search-form__pseudo-checkbox::after {
   content: "";
   background-color: #fff;
-  display: block;
+  display: flex;
   width: 90%;
   height: 90%;
   margin-left: 1px;
@@ -200,33 +214,37 @@ ol {
 }
 .search-form__label:has(.search-form__label-text):hover {
   text-decoration: underline;
+  text-underline-position: under;
 }
 .button {
   border: 1px solid #fff;
   background-color: #1B1919/0;
   color: #fff;
   cursor: pointer;
+  background-color:#1B1919;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  min-height: 34px;
+  font-style: bold;
+  margin-top: px;
 }
 .search-form__submit-button {
   align-self: end;
-  width: 194px;
-  height: 34px;
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
-  background-color: #1B1919;
+  min-width: 194px;
 }
 .more-button {
   width: 100%;
-  height: 34px;
-  background-color:#1B1919;
-  font-style: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
+  margin-top: 30px;
 }
 .button:hover {
   text-decoration: underline;
 }
 .button:active {
   background-color: #545050;
+  text-decoration: none;
+}
+.button:focus-visible {
+  outline: 1px solid #fff;
 }
 .content__card-link_current {
   background-color: #545050;
@@ -239,3 +257,8 @@ ol {
   text-decoration-thickness: 1px;
   text-underline-position: under;
 }
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
