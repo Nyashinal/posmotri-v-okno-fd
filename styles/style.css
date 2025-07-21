@@ -206,13 +206,16 @@ ol {
   content: "";
   background-color: #fff;
   display: flex;
-  width: 90%;
-  height: 90%;
+  width: 15px;
+  height: 15px;
   margin-left: 1px;
   margin-top: 1px;
   opacity: 0;
 }
 .search-form__pseudo-checkbox:active::after {
+  opacity: 1;
+}
+.search-form__pseudo-checkbox:checked::after {
   opacity: 1;
 }
 .search-form__label:has(.search-form__pseudo-checkbox):hover {
