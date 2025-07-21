@@ -145,7 +145,7 @@ ol {
   font-size: 18px;
   font-family: "Fira Sans Condensed", sans-serif;
   text-overflow: ellipsis;
-  max-width: 196px;
+  max-width: 190px;
 }
 .visually-hidden {
   position: absolute;
