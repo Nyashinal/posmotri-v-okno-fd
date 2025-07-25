@@ -212,10 +212,12 @@ ol {
   margin-top: 1px;
   opacity: 0;
 }
+/*
 .search-form__pseudo-checkbox:active::after {
   opacity: 1;
 }
-.search-form__pseudo-checkbox:checked::after {
+*/
+input[type="checkbox"]:checked ~ .search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 .search-form__label:has(.search-form__pseudo-checkbox):hover {
@@ -224,7 +226,6 @@ ol {
 }
 .button {
   border: 1px solid #fff;
-  background-color: #1B1919/0;
   color: #fff;
   cursor: pointer;
   background-color:#1B1919;
@@ -232,7 +233,6 @@ ol {
   font-size: 18px;
   min-height: 34px;
   font-weight: 700;
-  font-style:  bold;
 }
 .search-form__submit-button {
   align-self: end;
